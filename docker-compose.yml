@@ -1,0 +1,38 @@
+version: "3.5"
+services:
+  pingoBE:
+    container_name: pingo-backend
+    image: pingo-backend:1.0.0
+    environment:
+      - SERVER_PORT=3000
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_PW=${DB_PW}
+      - DB_USER=${DB_USER}
+      - DB_TYPE=${DB_TYPE}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXP=${JWT_EXP}
+      - JWT_REFRESH_EXP=${JWT_REFRESH_EXP}
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pingoBE.entrypoints=web-secure"
+      - "traefik.http.routers.pingoBE.rule=Host(`pingo-backend.mobile.media.fhstp.ac.at`)"
+      - "traefik.http.routers.pingoBE.tls=true"
+      - "traefik.http.routers.pingoBE.tls.certresolver=letsencrypt"
+      - "traefik.http.services.pingoBE.loadbalancer.server.port=3000"
+      - "traefik.docker.network=mkl_external"
+    restart: unless-stopped
+    command: npm run start:dev
+    networks:
+      - mkl2023_external
+      - mkl_external
+
+networks:
+  mkl2023_external:
+    external: true
+  mkl_external:
+    external: true
