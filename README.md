@@ -49,6 +49,25 @@ yarn start:prod
 localhost:3000/api
 ```
 
+## Video
+Check out a screen recording of the web app:
+<br>
+[![Watch the video](https://img.icons8.com/color/48/000000/video.png)](https://vimeo.com/1012399484?share=copy)
+
+
+## Screenshots
+<p float="left">
+  <img src="/screenshots/pingo_screenshot_1.png" width="300" alt="screenshot_1"/>
+  <img src="/screenshots/pingo_screenshot_2.png" width="300" alt="screenshot_2"/>
+  <img src="/screenshots/pingo_screenshot_3.png" width="300" alt="screenshot_3"/>
+  <img src="/screenshots/pingo_screenshot_4.png" width="300" alt="screenshot_4"/>
+  <img src="/screenshots/pingo_screenshot_5.png" width="300" alt="screenshot_5"/>
+  <img src="/screenshots/pingo_screenshot_6.png" width="300" alt="screenshot_6"/>
+  <img src="/screenshots/pingo_screenshot_7.png" width="300" alt="screenshot_7"/>
+  <img src="/screenshots/pingo_screenshot_8.png" width="300" alt="screenshot_8"/>
+</p>
+
+
 
 ## Test
 
